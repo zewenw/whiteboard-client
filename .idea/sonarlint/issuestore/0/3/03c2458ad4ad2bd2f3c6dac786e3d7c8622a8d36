@@ -1,0 +1,5 @@
+
+_python:S2208"GImport only needed names or import the module and then use its members.(ï€¢
+kpython:S1542
+"NRename function "savePosn" to match the regular expression ^[a-z_][a-z0-9_]*$.(‹¤À¢üÿÿÿÿ
+epython:S1542"MRename function "addLine" to match the regular expression ^[a-z_][a-z0-9_]*$.(â‡ÈÙ
