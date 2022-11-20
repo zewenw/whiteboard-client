@@ -1,11 +1,0 @@
-
-]python:S5720"9Rename "s" to "self" or add the missing "self" parameter.(Ù®¶Îþÿÿÿÿ8É¤Ä‹É0
-]python:S5720"9Rename "s" to "self" or add the missing "self" parameter.(Üµ„ùûÿÿÿÿ8Ê¤Ä‹É0
-mpython:S100"JRename method "Canvas" to match the regular expression ^[a-z_][a-z0-9_]*$.(Üµ„ùûÿÿÿÿ8Ê¤Ä‹É0
-xpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(Üµ„ùûÿÿÿÿ8Ê¤Ä‹É0
-kpython:S5655|"GChange this argument; Function "create_window" expects a different type(Ò‹ÜÏþÿÿÿÿ8Ê¤Ä‹É0
-kpython:S930|"HAdd 1 missing arguments; 'create_window' expects 2 positional arguments.(Ò‹ÜÏþÿÿÿÿ8Ê¤Ä‹É0
-kpython:S5655~"GChange this argument; Function "create_window" expects a different type(Žè©Ûúÿÿÿÿ8Ê¤Ä‹É0
-kpython:S930~"HAdd 1 missing arguments; 'create_window' expects 2 positional arguments.(Žè©Ûúÿÿÿÿ8Ê¤Ä‹É0
-lpython:S5655€"GChange this argument; Function "create_window" expects a different type(½àø°ûÿÿÿÿ8Ê¤Ä‹É0
-lpython:S930€"HAdd 1 missing arguments; 'create_window' expects 2 positional arguments.(½àø°ûÿÿÿÿ8Ê¤Ä‹É0
