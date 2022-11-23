@@ -19,7 +19,7 @@ class WebSocketThread(threading.Thread):
     def run(self):
         # asyncio.set_event_loop(asyncio.new_event_loop())
         user = rand_str(3)
-        websocket = create_connection("ws://localhost:10001/whiteboard/user")
+        websocket = create_connection("ws://localhost:10001/whiteboard/" + user)
         self.socket = websocket
         # self.listen()
         # asyncio.get_event_loop().run_until_complete(websocket)
