@@ -1,3 +1,5 @@
+import random
+import string
 from tkinter import *
 from websocket import create_connection
 import threading
@@ -16,7 +18,8 @@ class WebSocketThread(threading.Thread):
 
     def run(self):
         # asyncio.set_event_loop(asyncio.new_event_loop())
-        websocket = create_connection("ws://localhost:8765")
+        user = rand_str(3)
+        websocket = create_connection("ws://localhost:12306/whiteboard/user")
         self.socket = websocket
         # self.listen()
         # asyncio.get_event_loop().run_until_complete(websocket)
@@ -45,6 +48,15 @@ class WebSocketThread(threading.Thread):
 
     # def do_activate(self):
     #     asyncio.get_event_loop().run_until_complete(self.action())
+
+
+def rand_str(num):
+    """
+    生成随机字符串
+    :param num: 随机字符串个数
+    :return: 指定位数的随机字符串
+    """
+    return ''.join(random.sample(string.ascii_letters + string.digits, num))
 
 
 threadWebSocket = WebSocketThread()

@@ -1,3 +1,5 @@
+import random
+import string
 from tkinter import *
 from websocket import create_connection
 import threading
@@ -16,7 +18,8 @@ class WebSocketThread(threading.Thread):
 
     def run(self):
         # asyncio.set_event_loop(asyncio.new_event_loop())
-        websocket = create_connection("ws://localhost:8765")
+        user = rand_str(3)
+        websocket = create_connection("ws://localhost:12306/whiteboard/user")
         self.socket = websocket
         # self.listen()
         # asyncio.get_event_loop().run_until_complete(websocket)
@@ -45,6 +48,15 @@ class WebSocketThread(threading.Thread):
 
     # def do_activate(self):
     #     asyncio.get_event_loop().run_until_complete(self.action())
+
+
+def rand_str(num):
+    """
+    生成随机字符串
+    :param num: 随机字符串个数
+    :return: 指定位数的随机字符串
+    """
+    return ''.join(random.sample(string.ascii_letters + string.digits, num))
 
 
 threadWebSocket = WebSocketThread()
@@ -76,16 +88,16 @@ def click_position(event):
 def release_position(event):
     global canvas
     if circle_flag:
-        msg = "circle|" + str(lastx) + "|" + str(lasty) + "|" + str(event.x) + "|" + str(event.y)
         canvas.create_oval(lastx, lasty, event.x, event.y)
+        msg = "circle|" + str(lastx) + "|" + str(lasty) + "|" + str(event.x) + "|" + str(event.y)
         click_position(event)
         threadWebSocket.send_msg(msg)
         # print("circle_begin_X_coor: " + str(lastx) + " circle_begin_Y_coor: " + str(
         #     lasty) + " circle_end_X_coor: " + str(
         #     event.x) + " circle_end_Y_coor: " + str(event.y))
     if rectangle_flag:
-        msg = "rectangle|" + str(lastx) + "|" + str(lasty) + "|" + str(event.x) + "|" + str(event.y)
         canvas.create_rectangle(lastx, lasty, event.x, event.y)
+        msg = "rectangle|" + str(lastx) + "|" + str(lasty) + "|" + str(event.x) + "|" + str(event.y)
         click_position(event)
         threadWebSocket.send_msg(msg)
         # print("rec_begin_X_coor: " + str(lastx) + " rec_begin_Y_coor: " + str(
@@ -142,7 +154,7 @@ def clear_canvas():
 
 
 root = Tk()
-root.title("WhiteBoard-two（Owen, Zahraa, Zhichao）")
+root.title("WhiteBoard-one（Owen, Zahraa, Zhichao）")
 root.geometry("500x660")
 
 button_frame = LabelFrame(root, text="Choose Function", bd=1, padx=10, pady=10)
@@ -179,4 +191,3 @@ canvas.bind("<ButtonRelease-1>", release_position)
 canvas.pack()
 
 root.mainloop()
-
