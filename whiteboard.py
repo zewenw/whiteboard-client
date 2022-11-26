@@ -26,7 +26,7 @@ class WebSocketThread(threading.Thread):
         # asyncio.get_event_loop().run_forever()
 
     def listen(self):
-        _thread.start_new_thread(self.do_listen)
+        _thread.start_new_thread(self.do_listen, ())
 
     def do_listen(self):
         print("begin monitor")
