@@ -154,7 +154,7 @@ def clear_canvas():
 
 
 root = Tk()
-root.title("WhiteBoard-one（Owen, Zahraa, Zhichao）")
+root.title("WhiteBoard（Zewen, Zahraa, Zhichao）")
 root.geometry("500x660")
 
 button_frame = LabelFrame(root, text="Choose Function", bd=1, padx=10, pady=10)
