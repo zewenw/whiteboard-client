@@ -18,8 +18,9 @@ class WebSocketThread(threading.Thread):
 
     def run(self):
         # asyncio.set_event_loop(asyncio.new_event_loop())
-        user = rand_str(3)
-        websocket = create_connection("ws://34.105.244.37:30000/whiteboard/" + user)
+        user = ''.join(random.sample(string.ascii_letters + string.digits, 3))
+        # websocket = create_connection("ws://34.105.244.37:30000/whiteboard/" + user)
+        websocket = create_connection("ws://34.89.116.220:30000/whiteboard/" + user)
         self.socket = websocket
         # self.listen()
         # asyncio.get_event_loop().run_until_complete(websocket)
@@ -48,15 +49,6 @@ class WebSocketThread(threading.Thread):
 
     # def do_activate(self):
     #     asyncio.get_event_loop().run_until_complete(self.action())
-
-
-def rand_str(num):
-    """
-    生成随机字符串
-    :param num: 随机字符串个数
-    :return: 指定位数的随机字符串
-    """
-    return ''.join(random.sample(string.ascii_letters + string.digits, num))
 
 
 threadWebSocket = WebSocketThread()
