@@ -19,7 +19,9 @@ class WebSocketThread(threading.Thread):
     def run(self):
         # asyncio.set_event_loop(asyncio.new_event_loop())
         user = ''.join(random.sample(string.ascii_letters + string.digits, 3))
+        # cluster ip
         # websocket = create_connection("ws://34.105.244.37:30000/whiteboard/" + user)
+        # single node ip
         websocket = create_connection("ws://34.89.116.220:30000/whiteboard/" + user)
         self.socket = websocket
         # self.listen()
