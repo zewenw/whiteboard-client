@@ -24,7 +24,7 @@ class WebSocketThread(threading.Thread):
         # single node ip
         # websocket = create_connection("ws://34.89.116.220:30000/whiteboard/" + user)
         self.socket = websocket
-        self.listen()
+        # self.listen()
         asyncio.get_event_loop().run_until_complete(websocket)
         asyncio.get_event_loop().run_forever()
 
